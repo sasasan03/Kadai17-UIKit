@@ -28,18 +28,51 @@
                     <navigationItem key="navigationItem" id="4Bm-mI-f7l">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TNb-Lh-hnI">
                             <connections>
-                                <segue destination="usg-ge-UA8" kind="presentation" id="OHc-na-per"/>
+                                <segue destination="9Wb-Ar-9an" kind="presentation" id="OHc-na-per"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="itemTableView" destination="qLJ-Cm-qTB" id="PSP-ti-smg"/>
-                        <segue destination="usg-ge-UA8" kind="presentation" id="FUd-34-Af6"/>
+                        <segue destination="9Wb-Ar-9an" kind="presentation" id="FUd-34-Af6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1043.5114503816794" y="3.5211267605633805"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RiL-Iv-62T">
+            <objects>
+                <viewController id="avx-kV-WIB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vfb-0y-AYd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LDQ-lc-DIL">
+                                <rect key="frame" x="95" y="409" width="255" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="追加" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjG-zy-GJh">
+                                <rect key="frame" x="31" y="416" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3gg-Lf-6TQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PAE-Ci-pZy">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jBU-yU-jGw"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="keU-1U-N2T"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cr6-UD-UIj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3315.2671755725191" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xOA-7w-OLi">
@@ -59,17 +92,27 @@
             </objects>
             <point key="canvasLocation" x="116.79389312977099" y="3.5211267605633805"/>
         </scene>
-        <!--ItemAddEditView-->
-        <scene sceneID="AeM-Ei-RJA">
+        <!--Navigation Controller-->
+        <scene sceneID="BCR-Ln-h0L">
             <objects>
-                <viewControllerPlaceholder storyboardName="ItemAddEditView" id="usg-ge-UA8" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u4Y-u2-WGC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Wb-Ar-9an" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="77H-we-Iij">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="avx-kV-WIB" kind="relationship" relationship="rootViewController" id="BhI-Gf-Plr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Swu-Yp-BSW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1727" y="4"/>
+            <point key="canvasLocation" x="2388.5496183206105" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FUd-34-Af6"/>
+        <segue reference="OHc-na-per"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

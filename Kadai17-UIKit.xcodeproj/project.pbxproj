@@ -16,6 +16,10 @@
 		69DB8EFE2A6E795400E58562 /* Kadai17_UIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DB8EFD2A6E795400E58562 /* Kadai17_UIKitTests.swift */; };
 		69DB8F082A6E795400E58562 /* Kadai17_UIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DB8F072A6E795400E58562 /* Kadai17_UIKitUITests.swift */; };
 		69DB8F0A2A6E795400E58562 /* Kadai17_UIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DB8F092A6E795400E58562 /* Kadai17_UIKitUITestsLaunchTests.swift */; };
+		69DB8F182A6E7B7100E58562 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DB8F162A6E7B7100E58562 /* TableViewCell.swift */; };
+		69DB8F192A6E7B7100E58562 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69DB8F172A6E7B7100E58562 /* TableViewCell.xib */; };
+		69DB8F1C2A6E822B00E58562 /* ItemAddEditView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DB8F1A2A6E822B00E58562 /* ItemAddEditView.storyboard */; };
+		69DB8F1E2A6E826A00E58562 /* ItemAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DB8F1D2A6E826A00E58562 /* ItemAddEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		69DB8F032A6E795400E58562 /* Kadai17-UIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kadai17-UIKitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69DB8F072A6E795400E58562 /* Kadai17_UIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kadai17_UIKitUITests.swift; sourceTree = "<group>"; };
 		69DB8F092A6E795400E58562 /* Kadai17_UIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kadai17_UIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		69DB8F162A6E7B7100E58562 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		69DB8F172A6E7B7100E58562 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		69DB8F1B2A6E822B00E58562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Kadai17-UIKit/Base.lproj/ItemAddEditView.storyboard"; sourceTree = "<group>"; };
+		69DB8F1D2A6E826A00E58562 /* ItemAddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAddEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +109,12 @@
 			children = (
 				69DB8EE62A6E795300E58562 /* AppDelegate.swift */,
 				69DB8EE82A6E795300E58562 /* SceneDelegate.swift */,
-				69DB8EEA2A6E795300E58562 /* ViewController.swift */,
 				69DB8EEC2A6E795300E58562 /* Main.storyboard */,
+				69DB8EEA2A6E795300E58562 /* ViewController.swift */,
+				69DB8F1A2A6E822B00E58562 /* ItemAddEditView.storyboard */,
+				69DB8F1D2A6E826A00E58562 /* ItemAddEditViewController.swift */,
+				69DB8F172A6E7B7100E58562 /* TableViewCell.xib */,
+				69DB8F162A6E7B7100E58562 /* TableViewCell.swift */,
 				69DB8EEF2A6E795400E58562 /* Assets.xcassets */,
 				69DB8EF12A6E795400E58562 /* LaunchScreen.storyboard */,
 				69DB8EF42A6E795400E58562 /* Info.plist */,
@@ -232,8 +244,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				69DB8EF32A6E795400E58562 /* LaunchScreen.storyboard in Resources */,
+				69DB8F192A6E7B7100E58562 /* TableViewCell.xib in Resources */,
 				69DB8EF02A6E795400E58562 /* Assets.xcassets in Resources */,
 				69DB8EEE2A6E795300E58562 /* Main.storyboard in Resources */,
+				69DB8F1C2A6E822B00E58562 /* ItemAddEditView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				69DB8EEB2A6E795300E58562 /* ViewController.swift in Sources */,
+				69DB8F182A6E7B7100E58562 /* TableViewCell.swift in Sources */,
+				69DB8F1E2A6E826A00E58562 /* ItemAddEditViewController.swift in Sources */,
 				69DB8EE72A6E795300E58562 /* AppDelegate.swift in Sources */,
 				69DB8EE92A6E795300E58562 /* SceneDelegate.swift in Sources */,
 			);
@@ -311,6 +327,14 @@
 				69DB8EF22A6E795400E58562 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		69DB8F1A2A6E822B00E58562 /* ItemAddEditView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69DB8F1B2A6E822B00E58562 /* Base */,
+			);
+			name = ItemAddEditView.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
