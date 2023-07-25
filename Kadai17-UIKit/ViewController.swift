@@ -22,6 +22,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var itemTableView: UITableView!
 
+    var selectedItemIndex: IndexPath?
+    var selecteditemName: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         itemTableView.dataSource = self
@@ -41,5 +44,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        items[indexPath.row].isChecked.toggle()
+        itemTableView.reloadRows(at: [indexPath], with: .middle)
+    }
+    
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        self.selecteditemName = items[indexPath.row].name
+        self.selectedItemIndex = indexPath
+        //performSwgueを追加して譲渡先を明示する。
+    }
     
 }
