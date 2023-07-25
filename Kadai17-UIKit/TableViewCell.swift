@@ -17,6 +17,7 @@ class TableViewCell: UITableViewCell {
     
     func configure(item: Item){
         checkMark.image =  UIImage(systemName: item.isChecked ? "checkmark.diamond.fill" : "checkmark.diamond")
+        itemText.text = item.name
     }
    
 //    override func awakeFromNib() {
