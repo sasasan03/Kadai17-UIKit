@@ -28,13 +28,13 @@
                     <navigationItem key="navigationItem" id="4Bm-mI-f7l">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TNb-Lh-hnI">
                             <connections>
-                                <segue destination="usg-ge-UA8" kind="presentation" id="OHc-na-per"/>
+                                <segue destination="usg-ge-UA8" kind="presentation" identifier="addSegue" id="OHc-na-per"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="itemTableView" destination="qLJ-Cm-qTB" id="PSP-ti-smg"/>
-                        <segue destination="usg-ge-UA8" kind="presentation" id="FUd-34-Af6"/>
+                        <segue destination="usg-ge-UA8" kind="presentation" identifier="editSegue" id="FUd-34-Af6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -69,7 +69,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FUd-34-Af6"/>
+        <segue reference="OHc-na-per"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

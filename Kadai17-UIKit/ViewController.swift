@@ -52,7 +52,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         self.selecteditemName = items[indexPath.row].name
         self.selectedItemIndex = indexPath
-        //performSwgueを追加して譲渡先を明示する。
+        performSegue(withIdentifier: ItemAddEditViewController.editSegueIdentifier, sender: indexPath)
     }
     
 }

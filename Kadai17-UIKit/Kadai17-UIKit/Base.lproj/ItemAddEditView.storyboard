@@ -11,7 +11,7 @@
         <!--Item Add Edit View Controller-->
         <scene sceneID="RiL-Iv-62T">
             <objects>
-                <viewController id="avx-kV-WIB" customClass="ItemAddEditViewController" customModule="Kadai17_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemAddEditView" id="avx-kV-WIB" customClass="ItemAddEditViewController" customModule="Kadai17_UIKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vfb-0y-AYd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,9 +34,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="PAE-Ci-pZy">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jBU-yU-jGw"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="keU-1U-N2T"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jBU-yU-jGw">
+                            <connections>
+                                <action selector="didTapCancel:" destination="avx-kV-WIB" id="NAS-1B-hQH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="keU-1U-N2T">
+                            <connections>
+                                <action selector="didTapSave:" destination="avx-kV-WIB" id="Qse-Kq-NSs"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="itemTextField" destination="LDQ-lc-DIL" id="S7v-PC-AKZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cr6-UD-UIj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
