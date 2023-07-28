@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Kadai17_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" id="BYZ-38-t0r" customClass="ViewController" customModule="Kadai17_UIKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,13 +28,12 @@
                     <navigationItem key="navigationItem" id="4Bm-mI-f7l">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TNb-Lh-hnI">
                             <connections>
-                                <segue destination="usg-ge-UA8" kind="presentation" identifier="addSegue" id="OHc-na-per"/>
+                                <action selector="toAddButtonAction:" destination="BYZ-38-t0r" id="ksQ-t2-CjZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="itemTableView" destination="qLJ-Cm-qTB" id="PSP-ti-smg"/>
-                        <segue destination="usg-ge-UA8" kind="presentation" identifier="editSegue" id="FUd-34-Af6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -59,18 +58,7 @@
             </objects>
             <point key="canvasLocation" x="116.79389312977099" y="3.5211267605633805"/>
         </scene>
-        <!--ItemAddEditView-->
-        <scene sceneID="AeM-Ei-RJA">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ItemAddEditView" id="usg-ge-UA8" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u4Y-u2-WGC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1727" y="4"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="OHc-na-per"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

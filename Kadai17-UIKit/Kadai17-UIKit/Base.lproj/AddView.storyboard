@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item Add Edit View Controller-->
+        <!--Add View Controller-->
         <scene sceneID="RiL-Iv-62T">
             <objects>
-                <viewController storyboardIdentifier="ItemAddEditView" id="avx-kV-WIB" customClass="ItemAddEditViewController" customModule="Kadai17_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddView" id="avx-kV-WIB" customClass="AddViewController" customModule="Kadai17_UIKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vfb-0y-AYd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
         <!--Navigation Controller-->
         <scene sceneID="BCR-Ln-h0L">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Wb-Ar-9an" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="nav" automaticallyAdjustsScrollViewInsets="NO" id="9Wb-Ar-9an" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="77H-we-Iij">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

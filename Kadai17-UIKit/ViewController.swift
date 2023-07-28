@@ -14,6 +14,8 @@ struct Item {
 
 class ViewController: UIViewController {
     
+    static let mainStoryboardID = "main"
+    
     var items = [
         Item(name: "えんぴつ", isChecked: false),
         Item(name: "消しゴム", isChecked: true),
@@ -24,6 +26,12 @@ class ViewController: UIViewController {
 
     var selectedItemIndex: IndexPath?
     var selecteditemName: String?
+    
+    //MARK: AddViewへ遷移させるためのボタン
+    @IBAction func toAddButtonAction(_ sender: Any) {
+        let toAddView = self.storyboard?.instantiateViewController(withIdentifier: TestViewController.testID) as! TestViewController
+        self.navigationController?.pushViewController(toAddView, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +60,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         self.selecteditemName = items[indexPath.row].name
         self.selectedItemIndex = indexPath
-        performSegue(withIdentifier: ItemAddEditViewController.editSegueIdentifier, sender: indexPath)
+        //performSegue(withIdentifier: AddViewController.editSegueIdentifier, sender: indexPath)
+    }
+}
+
+extension ViewController: TextFieldDelegate {
+    func didSaveAdd(name: String) {
+        items.append(Item(name: name, isChecked: false))
     }
     
+    func didSaveEdit(name: String, ind: Int) {
+        
+    }
 }
