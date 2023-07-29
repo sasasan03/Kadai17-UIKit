@@ -18,16 +18,19 @@ class AddViewController: UIViewController {
  //   static let addSegueIdentifier = "addSegue"
     static let AddSoryboardID = "AddView"
     
-    weak private var delegate: TextFieldDelegate?
+    weak var delegate: TextFieldDelegate?
 
     @IBOutlet weak var itemTextField: UITextField!
     
     //TODO: ボタンが押されたときに、画面に入力された値を渡す処理方法にかえる。
     @IBAction func didTapSave(_ sender: Any) {
-        let mainView = self.storyboard?.instantiateViewController(withIdentifier: ViewController.mainStoryboardID) as! ViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let VC = storyboard.instantiateViewController(withIdentifier: ViewController.mainStoryboardID) as! ViewController
         guard let itemName = itemTextField.text else { return print("🍔：値なし") }
         delegate?.didSaveAdd(name: itemName)
-        mainView.items.append(Item(name: itemName, isChecked: false))
+    //    VC.items.append(Item(name: itemName, isChecked: false))
+        print("🍔：", VC.items)
+        self.dismiss(animated: true)
     }
     
     @IBAction func didTapCancel(_ sender: Any) {
@@ -36,7 +39,7 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Add"
+        navigationItem.title = "追加画面"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(didTapSave))
     }
 }

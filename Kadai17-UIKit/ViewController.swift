@@ -71,6 +71,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 extension ViewController: TextFieldDelegate {
     func didSaveAdd(name: String) {
         items.append(Item(name: name, isChecked: false))
+        itemTableView.reloadData()
     }
     
     func didSaveEdit(name: String, ind: Int) {
