@@ -24,10 +24,10 @@ class AddViewController: UIViewController {
     
     //TODO: ボタンが押されたときに、画面に入力された値を渡す処理方法にかえる。
     @IBAction func didTapSave(_ sender: Any) {
-//        let mainView = self.storyboard?.instantiateViewController(withIdentifier: ViewController.mainStoryboardID) as! ViewController
-//        guard let itemName = itemTextField.text else { return print("🍔：値なし") }
-//        delegate?.didSaveAdd(name: itemName)
-//        mainView.items.append(Item(name: itemName, isChecked: false))
+        let mainView = self.storyboard?.instantiateViewController(withIdentifier: ViewController.mainStoryboardID) as! ViewController
+        guard let itemName = itemTextField.text else { return print("🍔：値なし") }
+        delegate?.didSaveAdd(name: itemName)
+        mainView.items.append(Item(name: itemName, isChecked: false))
     }
     
     @IBAction func didTapCancel(_ sender: Any) {
@@ -36,6 +36,7 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = "Add"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(didTapSave))
     }
 }

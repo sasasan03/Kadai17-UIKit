@@ -29,9 +29,11 @@ class ViewController: UIViewController {
 
     //MARK: AddViewへ遷移させるためのボタン
     @IBAction func toAddButtonAction(_ sender: Any) {
-        let addView = UIStoryboard(name: "AddView", bundle: nil).instantiateViewController(withIdentifier: AddViewController.AddSoryboardID)
-        present(addView, animated: true)
-        //TODO: これがなぜクラッシュするのか調べる
+        let storyboard = UIStoryboard(name: "AddView", bundle: nil)
+        let addView = storyboard.instantiateViewController(withIdentifier: AddViewController.AddSoryboardID)
+        let navigationController = UINavigationController(rootViewController: addView)
+        self.present(navigationController, animated: true)
+        //TODO: - これがなぜクラッシュするのか調べる
         //let nextView = self.storyboard?.instantiateViewController(withIdentifier: NextViewController.nextSBID) as! NextViewController
     }
     
