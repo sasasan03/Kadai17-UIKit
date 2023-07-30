@@ -35,7 +35,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="PL9-os-B3g">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="z8q-gd-YkQ"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Hwa-G7-ivc"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Hwa-G7-ivc">
+                            <connections>
+                                <action selector="EditSave:" destination="Y6W-OH-hqX" id="adR-Wy-lY6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="editTextField" destination="HWX-Ku-QP0" id="Juc-PF-vjm"/>

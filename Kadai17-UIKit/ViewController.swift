@@ -29,12 +29,15 @@ class ViewController: UIViewController {
 
     //MARK: AddViewへ遷移させるためのボタン
     @IBAction func toAddButtonAction(_ sender: Any) {
+        //AddViewへ遷移することを明示
         let storyboard = UIStoryboard(name: "AddView", bundle: nil)
+        //デリゲートを受け取るために使用
         let addView = storyboard.instantiateViewController(withIdentifier: AddViewController.AddSoryboardID) as! AddViewController
-        let navigationController = UINavigationController(rootViewController: addView)
+        //present()内で使用
+        let nav = UINavigationController(rootViewController: addView)
         //MARK: ここでdelegateを任されることを宣言する。これがないと、TextFieldDelegateに適合していたとしても下（extentionで拡張した場所）のメソッドの処理は走らない。
         addView.delegate = self
-        self.present(navigationController, animated: true)
+        self.present(nav, animated: true)
         //TODO: - これがなぜクラッシュするのか調べる
         //let nextView = self.storyboard?.instantiateViewController(withIdentifier: NextViewController.nextSBID) as! NextViewController
     }
@@ -63,11 +66,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         items[indexPath.row].isChecked.toggle()
         itemTableView.reloadRows(at: [indexPath], with: .middle)
     }
-    
+    //MARK: performSegue以外を使って値を渡す。
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        self.selecteditemName = items[indexPath.row].name
-        self.selectedItemIndex = indexPath
-        performSegue(withIdentifier: EditViewController.editVCIdentifier, sender: indexPath)
+        let editStoryboard = UIStoryboard(name: "EditView", bundle: nil)
+        if let editVC = editStoryboard.instantiateViewController(withIdentifier: EditViewController.editVCIdentifier) as? EditViewController {
+            editVC.indexPath = indexPath
+            editVC.itemName = items[indexPath.row].name
+            present(editVC, animated: true)
+        }
     }
 }
 
