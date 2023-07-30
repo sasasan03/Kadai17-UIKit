@@ -67,7 +67,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         self.selecteditemName = items[indexPath.row].name
         self.selectedItemIndex = indexPath
-        //performSegue(withIdentifier: AddViewController.editSegueIdentifier, sender: indexPath)
+        performSegue(withIdentifier: EditViewController.editVCIdentifier, sender: indexPath)
     }
 }
 
