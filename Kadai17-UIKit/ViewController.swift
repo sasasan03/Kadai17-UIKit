@@ -44,7 +44,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         itemTableView.dataSource = self
         itemTableView.delegate = self
         itemTableView.register(UINib(nibName: TableViewCell.cellNibName, bundle: nil), forCellReuseIdentifier: TableViewCell.cellIdentifier)
@@ -69,11 +68,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     //MARK: performSegue以外を使って値を渡す。
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         let editStoryboard = UIStoryboard(name: "EditView", bundle: nil)
-        if let editVC = editStoryboard.instantiateViewController(withIdentifier: EditViewController.editVCIdentifier) as? EditViewController {
-            editVC.indexPath = indexPath
-            editVC.itemName = items[indexPath.row].name
-            present(editVC, animated: true)
-        }
+        guard let editVC = editStoryboard.instantiateViewController(withIdentifier: EditViewController.editVCIdentifier) as?  EditViewController else { return print("🍔：nil") }
+        //🍔：navプロパティを挟むと解消
+        let nav = UINavigationController(rootViewController: editVC)
+        //🍔
+        editVC.indexPath = indexPath
+        editVC.itemName = items[indexPath.row].name
+        present(nav, animated: true)
+        //❌
+        //present(editVC, animated: true)
+        //❌
     }
 }
 
@@ -83,7 +87,8 @@ extension ViewController: TextFieldDelegate {
         itemTableView.reloadData()
     }
     
-    func didSaveEdit(name: String, ind: Int) {
-        
+    func didSaveEdit(name: String, index: Int) {
+        items[index].name = name
+        itemTableView.reloadData()
     }
 }
