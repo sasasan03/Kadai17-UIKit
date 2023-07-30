@@ -30,8 +30,10 @@ class ViewController: UIViewController {
     //MARK: AddViewへ遷移させるためのボタン
     @IBAction func toAddButtonAction(_ sender: Any) {
         let storyboard = UIStoryboard(name: "AddView", bundle: nil)
-        let addView = storyboard.instantiateViewController(withIdentifier: AddViewController.AddSoryboardID)
+        let addView = storyboard.instantiateViewController(withIdentifier: AddViewController.AddSoryboardID) as! AddViewController
         let navigationController = UINavigationController(rootViewController: addView)
+        //MARK: ここでdelegateを任されることを宣言する。これがないと、TextFieldDelegateに適合していたとしても下（extentionで拡張した場所）のメソッドの処理は走らない。
+        addView.delegate = self
         self.present(navigationController, animated: true)
         //TODO: - これがなぜクラッシュするのか調べる
         //let nextView = self.storyboard?.instantiateViewController(withIdentifier: NextViewController.nextSBID) as! NextViewController
@@ -39,6 +41,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         itemTableView.dataSource = self
         itemTableView.delegate = self
         itemTableView.register(UINib(nibName: TableViewCell.cellNibName, bundle: nil), forCellReuseIdentifier: TableViewCell.cellIdentifier)

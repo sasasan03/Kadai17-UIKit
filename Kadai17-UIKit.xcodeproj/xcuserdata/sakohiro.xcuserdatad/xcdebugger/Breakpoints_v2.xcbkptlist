@@ -14,10 +14,57 @@
             filePath = "Kadai17-UIKit/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "didSaveAdd(name:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A752C53E-4F3C-4D20-BFCB-326B4CCECDE0 - adef8c0192fefbf9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kadai17_UIKit.ViewController.didSaveEdit(name: Swift.String, ind: Swift.Int) -&gt; ()"
+                  moduleName = "Kadai17-UIKit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sakohiro/Desktop/Kadai17-UIKit/Kadai17-UIKit/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "A752C53E-4F3C-4D20-BFCB-326B4CCECDE0 - 2f505ffd947deaad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kadai17_UIKit.ViewController.didSaveAdd(name: Swift.String) -&gt; ()"
+                  moduleName = "Kadai17-UIKit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sakohiro/Desktop/Kadai17-UIKit/Kadai17-UIKit/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "A752C53E-4F3C-4D20-BFCB-326B4CCECDE0 - 2f505ffd947dea4e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kadai17_UIKit.ViewController.didSaveAdd(name: Swift.String) -&gt; ()"
+                  moduleName = "Kadai17-UIKit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sakohiro/Desktop/Kadai17-UIKit/Kadai17-UIKit/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

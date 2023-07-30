@@ -14,8 +14,6 @@ protocol TextFieldDelegate: AnyObject {
 
 class AddViewController: UIViewController {
     
-//    static let editSegueIdentifier = "editSegue"
- //   static let addSegueIdentifier = "addSegue"
     static let AddSoryboardID = "AddView"
     
     weak var delegate: TextFieldDelegate?
@@ -28,8 +26,6 @@ class AddViewController: UIViewController {
         let VC = storyboard.instantiateViewController(withIdentifier: ViewController.mainStoryboardID) as! ViewController
         guard let itemName = itemTextField.text else { return print("🍔：値なし") }
         delegate?.didSaveAdd(name: itemName)
-    //    VC.items.append(Item(name: itemName, isChecked: false))
-        print("🍔：", VC.items)
         self.dismiss(animated: true)
     }
     
