@@ -22,8 +22,6 @@ class AddViewController: UIViewController {
     
     //TODO: ボタンが押されたときに、画面に入力された値を渡す処理方法にかえる。
     @IBAction func didTapSave(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-       // let VC = storyboard.instantiateViewController(withIdentifier: ViewController.mainStoryboardID) as! ViewController
         guard let itemName = itemTextField.text else { return print("🍔：値なし") }
         delegate?.didSaveAdd(name: itemName)
         self.dismiss(animated: true)
