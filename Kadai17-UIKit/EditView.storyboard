@@ -34,10 +34,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="PL9-os-B3g">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="z8q-gd-YkQ"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="z8q-gd-YkQ">
+                            <connections>
+                                <action selector="cancel:" destination="Y6W-OH-hqX" id="Obj-Rx-B14"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Hwa-G7-ivc">
                             <connections>
-                                <action selector="EditSave:" destination="Y6W-OH-hqX" id="adR-Wy-lY6"/>
+                                <action selector="editSave:" destination="Y6W-OH-hqX" id="b3j-hf-7cI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

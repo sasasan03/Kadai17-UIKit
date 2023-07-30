@@ -9,7 +9,7 @@ import UIKit
 
 protocol TextFieldDelegate: AnyObject {
     func didSaveAdd(name: String)
-    func didSaveEdit(name: String, ind: Int)
+    func didSaveEdit(name: String, index: Int)
 }
 
 class AddViewController: UIViewController {
