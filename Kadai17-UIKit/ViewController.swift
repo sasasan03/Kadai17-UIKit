@@ -69,13 +69,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         let editStoryboard = UIStoryboard(name: "EditView", bundle: nil)
         guard let editVC = editStoryboard.instantiateViewController(withIdentifier: EditViewController.editVCIdentifier) as?  EditViewController else { return print("🍔：nil") }
-        //🍔：navプロパティを挟むと解消
+        //🍔：navプロパティを挟むと解消（スレッドのクラッシュ）
         let nav = UINavigationController(rootViewController: editVC)
+        //🍹：
+        editVC.delgate = self
+        //🍹
         //🍔
-        editVC.indexPath = indexPath
-        editVC.itemName = items[indexPath.row].name
+        editVC.indexPath = indexPath //🟦値を渡しにいく
+        editVC.itemName = items[indexPath.row].name //🟦値を渡しにいく
         present(nav, animated: true)
-        //❌
+        //❌:直接表示させたいViewController引数に持たせるわけではなく、NavigationControllerを渡す。
         //present(editVC, animated: true)
         //❌
     }
