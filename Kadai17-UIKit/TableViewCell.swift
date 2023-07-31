@@ -18,17 +18,5 @@ class TableViewCell: UITableViewCell {
     func configure(item: Item){
         checkMark.image =  UIImage(systemName: item.isChecked ? "checkmark.diamond.fill" : "checkmark.diamond")
         itemText.text = item.name
-    }
-   
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
-    
+    } 
 }

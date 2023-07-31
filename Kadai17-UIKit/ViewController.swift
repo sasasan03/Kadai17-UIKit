@@ -82,6 +82,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         //present(editVC, animated: true)
         //❌
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            items.remove(at: indexPath.row)
+            itemTableView.deleteRows(at: [indexPath], with: .middle)
+        }
+    }
 }
 
 extension ViewController: TextFieldDelegate {
