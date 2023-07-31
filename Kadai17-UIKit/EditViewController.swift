@@ -7,7 +7,7 @@
 import UIKit
 
 class EditViewController: UIViewController {
-    //EditViewControllerは❌nibはstoryboardの名前
+    //EditViewControllerは❌nibというのはstoryboardの名前
     static let nibName = "EditView"
     static let editVCIdentifier = "editView"
     

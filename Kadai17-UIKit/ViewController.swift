@@ -71,10 +71,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         guard let editVC = editStoryboard.instantiateViewController(withIdentifier: EditViewController.editVCIdentifier) as?  EditViewController else { return print("🍔：nil") }
         //🍔：navプロパティを挟むと解消（スレッドのクラッシュ）
         let nav = UINavigationController(rootViewController: editVC)
+        //🍔
         //🍹：
         editVC.delgate = self
         //🍹
-        //🍔
         editVC.indexPath = indexPath //🟦値を渡しにいく
         editVC.itemName = items[indexPath.row].name //🟦値を渡しにいく
         present(nav, animated: true)

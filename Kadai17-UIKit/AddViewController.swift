@@ -23,7 +23,7 @@ class AddViewController: UIViewController {
     //TODO: ボタンが押されたときに、画面に入力された値を渡す処理方法にかえる。
     @IBAction func didTapSave(_ sender: Any) {
         guard let itemName = itemTextField.text else { return print("🍔：値なし") }
-        delegate?.didSaveAdd(name: itemName)
+        delegate?.didSaveAdd(name: itemName)//🟦値を取得
         self.dismiss(animated: true)
     }
     
