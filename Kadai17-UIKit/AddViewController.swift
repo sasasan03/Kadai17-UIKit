@@ -6,17 +6,22 @@
 //
 
 import UIKit
+//UITableViewにdelegateというプロパティがあって、その型がUITableViewDelegateである。
+//AddViewContorollerにdelegateというプロパティがあって、その型がAddViewControllerDelegateである。
 
-protocol TextFieldDelegate: AnyObject {
+protocol TextFieldDelegate: AnyObject { //MARK: 🟥よくない命名：理由
     func didSaveAdd(name: String)
-    func didSaveEdit(name: String, index: Int)
 }
 
-class AddViewController: UIViewController {
+protocol AddViewControllerDelegate: AnyObject { //MARK: 🟥良い命名：理由
+    func didSaveAdd(name: String)
+}
+
+class AddViewController: UIViewController {//MARK: 🟨ヒントはここにある。
     
     static let AddSoryboardID = "AddView"
     
-    weak var delegate: TextFieldDelegate?
+    weak var delegate: AddViewControllerDelegate?
 
     @IBOutlet weak var itemTextField: UITextField!
     

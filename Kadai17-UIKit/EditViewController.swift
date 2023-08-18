@@ -6,6 +6,10 @@
 
 import UIKit
 
+protocol EditViewControllerDelegate: AnyObject {
+    func didSaveEdit(name: String, index: Int)
+}
+
 class EditViewController: UIViewController {
     //EditViewControllerは❌nibというのはstoryboardの名前
     static let nibName = "EditView"
@@ -13,12 +17,13 @@ class EditViewController: UIViewController {
     
     var indexPath: IndexPath?
     var itemName: String?
-    weak var delgate: TextFieldDelegate?
+    weak var delgate: EditViewControllerDelegate?
     
     @IBOutlet weak var editTextField: UITextField!
     
     @IBAction func editSave(_ sender: Any) {
         guard let index = indexPath?.row, let text = editTextField.text else { return print("🍔：nil") }
+        
         self.delgate?.didSaveEdit(name: text, index: index)
         self.dismiss(animated: true)
     }

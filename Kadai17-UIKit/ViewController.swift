@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         Item(name: "ものさし", isChecked: false)
     ]
     
+    //UITableViewをインスタンス化
     @IBOutlet weak var itemTableView: UITableView!
 
     var selectedItemIndex: IndexPath?
@@ -29,7 +30,8 @@ class ViewController: UIViewController {
 
     //MARK: AddViewへ遷移させるためのボタン
     @IBAction func toAddButtonAction(_ sender: Any) {
-        //AddViewへ遷移することを明示
+        let toAddView = storyboard?.instantiateViewController(withIdentifier: AddViewController.AddSoryboardID) as! AddViewController
+//        AddViewへ遷移することを明示r
         let storyboard = UIStoryboard(name: "AddView", bundle: nil)
         //デリゲートを受け取るために使用
         let addView = storyboard.instantiateViewController(withIdentifier: AddViewController.AddSoryboardID) as! AddViewController
@@ -38,6 +40,7 @@ class ViewController: UIViewController {
         //MARK: ここでdelegateを任されることを宣言する。これがないと、TextFieldDelegateに適合していたとしても下（extentionで拡張した場所）のメソッドの処理は走らない。
         addView.delegate = self
         self.present(nav, animated: true)
+//     ❌   present(toAddView, animated: true)
         //TODO: - これがなぜクラッシュするのか調べる
         //let nextView = self.storyboard?.instantiateViewController(withIdentifier: NextViewController.nextSBID) as! NextViewController
     }
@@ -72,7 +75,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         //🍔：navプロパティを挟むと解消（スレッドのクラッシュ）
         let nav = UINavigationController(rootViewController: editVC)
         //🍔
-        //🍹：
+        //🍹：delegateを委譲されることを設定。
         editVC.delgate = self
         //🍹
         editVC.indexPath = indexPath //🟦値を渡しにいく
@@ -81,6 +84,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         //❌:直接表示させたいViewController引数に持たせるわけではなく、NavigationControllerを渡す。
         //present(editVC, animated: true)
         //❌
+//        editVC.storyboard
+//        nav.storyboard
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -91,7 +96,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension ViewController: TextFieldDelegate {
+extension ViewController: AddViewControllerDelegate, EditViewControllerDelegate {
+    //⚠️メソッド名は被らないようにする
     func didSaveAdd(name: String) {
         items.append(Item(name: name, isChecked: false))
         itemTableView.reloadData()
