@@ -30,7 +30,7 @@ class ViewController: UIViewController {
 
     //MARK: AddViewへ遷移させるためのボタン
     @IBAction func toAddButtonAction(_ sender: Any) {
-        let toAddView = storyboard?.instantiateViewController(withIdentifier: AddViewController.AddSoryboardID) as! AddViewController
+        let toAddView = storyboard?.instantiateViewController(withIdentifier: AddViewController.AddSoryboardID) as? AddViewController
 //        AddViewへ遷移することを明示r
         let storyboard = UIStoryboard(name: "AddView", bundle: nil)
         //デリゲートを受け取るために使用
@@ -71,6 +71,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     //MARK: performSegue以外を使って値を渡す。
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         let editStoryboard = UIStoryboard(name: "EditView", bundle: nil)
+        let nav2 = UIStoryboard(name: "", bundle: nil)
         guard let editVC = editStoryboard.instantiateViewController(withIdentifier: EditViewController.editVCIdentifier) as?  EditViewController else { return print("🍔：nil") }
         //🍔：navプロパティを挟むと解消（スレッドのクラッシュ）
         let nav = UINavigationController(rootViewController: editVC)
